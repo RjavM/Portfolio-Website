@@ -38,7 +38,7 @@ const projects = [{
 export const Projects = () => {
     return <div>
         <Navbar />
-        <div className="bg-gray-900 h-screen">
+        <div className="bg-gray-900 flex flex-col h-screen">
             <div id="projects" className="text-black py-20 px-10">
                 <h2 className="text-white text-3xl font-bold">Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
