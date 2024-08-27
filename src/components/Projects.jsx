@@ -36,24 +36,30 @@ const projects = [{
 ]
 
 export const Projects = () => {
-    return <div>
-        <Navbar />
-        <div className="bg-gray-900 flex flex-col h-screen">
-            <div id="projects" className="text-black py-20 px-10">
+    return (
+        <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow bg-gray-900 text-black py-20 px-10">
                 <h2 className="text-white text-3xl font-bold">Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                     {projects.map((project, index) => (
                         <div key={index} className="bg-gray-300 p-5 rounded-lg shadow-lg">
                             <h3 className="text-xl font-bold">{project.title}</h3>
-                            <div className="mt-2">{project.description.map((line, i) => (
-                                <p key={i} className="mt-1">{line}</p>
-                            ))}</div>
-                            <a href={project.link} className="text-blue-500 mt-4 inline-block hover:font-bold underline">View Project</a>
+                            <div className="mt-2">
+                                {project.description.map((line, i) => (
+                                    <p key={i} className="mt-1">{line}</p>
+                                ))}
+                            </div>
+                            {project.link && (
+                                <a href={project.link} className="text-blue-500 mt-4 inline-block hover:font-bold underline">
+                                    View Project
+                                </a>
+                            )}
                         </div>
                     ))}
                 </div>
-            </div>
-            <Footer />        
+            </main>
+            <Footer />
         </div>
-    </div>
-} 
+    );
+};

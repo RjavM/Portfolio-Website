@@ -25,10 +25,10 @@ export const Footer = () => {
                         <a href="/#Home" className="text-blue-400 hover:underline">Home</a>
                     </li>
                     <li className="mb-2">
-                        <a href="Projects" className="text-blue-400 hover:underline">Projects</a>
+                        <a href="/Projects" className="text-blue-400 hover:underline">Projects</a>
                     </li>
                     <li className="mb-2">
-                        <a href="Contact" className="text-blue-400 hover:underline">Send me a message</a>
+                        <a href="/Contact" className="text-blue-400 hover:underline">Send me a message</a>
                     </li>
                 </ul>
             </div>
