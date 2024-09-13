@@ -10,9 +10,9 @@ import { Footer } from "./Footer";
 export const Home = () => {
   const nav = useNavigate();
 
-  return <div className="bg-gray-900 text-white min-h-screen">
+  return <div className="bg-gray-900 text-white min-h-screen flex flex-col">
     <Navbar />
-    <div className="py-12 flex flex-col justify-center items-center"><h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
+    <div className="flex-grow py-12 flex flex-col justify-center items-center"><h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
       <p className="text-2xl mt-4">
         <div className="flex flex-row justify-center italic">
           Where Creativity Meets Code <br />
