@@ -65,7 +65,7 @@ export const Home = () => {
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex justify-between text-slate-300">
                 <span>Current Focus</span>
-                <span className="text-white font-semibold">nfrastructure & AI/ML</span>
+                <span className="text-white font-semibold">Infrastructure & AI/ML</span>
               </div>
               <div className="flex justify-between text-slate-300">
                 <span>Location</span>

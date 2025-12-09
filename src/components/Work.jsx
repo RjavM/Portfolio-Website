@@ -11,7 +11,8 @@ const experiences = [
       "🧩 Worked across multiple microservices, developing features that improved reliability and clarity in the platform.",
       "⚙️ Provisioned using Ansible and automated OpenShift deployments, reducing setup effort across teams.",
       "🔒 Supported security improvements by identifying vulnerabilities and contributing fixes to strengthen the platform.",
-    ]
+    ],
+    tags: ["Java", "Ansible", "OpenShift", "Microservices"],
   },
   {
     title: "AI/ML Research Assistant",
@@ -68,8 +69,12 @@ export const Work = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-4 text-xs uppercase tracking-[0.3em] text-slate-500">Tools</p>
-                <p className="mt-2 text-sm text-slate-200">{exp.tags.join(" · ")}</p>
+                {exp.tags && exp.tags.length > 0 && (
+                  <>
+                    <p className="mt-4 text-xs uppercase tracking-[0.3em] text-slate-500">Tools</p>
+                    <p className="mt-2 text-sm text-slate-200">{exp.tags.join(" · ")}</p>
+                  </>
+                )}
                 {index !== experiences.length - 1 && (
                   <div className="mt-8 h-px w-full bg-white/10"></div>
                 )}
