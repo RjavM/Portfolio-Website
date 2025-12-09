@@ -1,9 +1,9 @@
 import React from "react";
 
 const stats = [
-  { label: "Engineering projects", value: "08+" },
-  { label: "Hackathons & clubs", value: "05" },
-  { label: "Tech stack mastery", value: "12 tools" },
+  { label: "Latency-free playlists", value: "124 hrs of lofi beats fueling late-night deploys"},
+  { label: "Slack emojis sent", value: "20 celebratory reactions per shipped feature" },
+  { label: "Laptop lid cycles", value: "1832 open/close reps chasing the next idea" },
   { label: "Coffee cups", value: "∞" },
 ];
 
@@ -18,7 +18,7 @@ export const Home = () => {
       <div className="max-w-6xl mx-auto px-4 py-20 lg:py-28 grid gap-12 lg:grid-cols-2 items-center">
         <div className="space-y-8">
           <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">
-            Software Engineer & Designer
+            Software Engineering Student
           </p>
           <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
             Crafting immersive digital experiences that blend{" "}
@@ -27,11 +27,6 @@ export const Home = () => {
             </span>{" "}
             with precision engineering.
           </h1>
-          <p className="text-lg text-slate-300 max-w-xl">
-            I'm Aarjav Mitkari, a Carleton University software engineering student focused on full-stack
-            web applications and AI/ML solutions. I help teams move from idea to polished product with a
-            sharp eye for UX and scalable architecture.
-          </p>
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
@@ -70,7 +65,7 @@ export const Home = () => {
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex justify-between text-slate-300">
                 <span>Current Focus</span>
-                <span className="text-white font-semibold">AI-driven UX</span>
+                <span className="text-white font-semibold">nfrastructure & AI/ML</span>
               </div>
               <div className="flex justify-between text-slate-300">
                 <span>Location</span>

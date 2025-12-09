@@ -9,26 +9,13 @@ const highlights = [
   {
     title: "Full-stack generalist",
     detail:
-      "Translating APIs into smooth front-end journeys with React, Tailwind, Django, FastAPI, and Node ecosystems.",
+      "Translating APIs into smooth front-end journeys with React, Tailwind, Django and Node ecosystems.",
   },
   {
-    title: "Research-driven creator",
+    title: "Infrastructure/System Arch freak",
     detail:
-      "Exploring computer vision and ML pipelines to understand how intelligent systems amplify human creativity.",
+      "Curious about how all the pipes—models, services, and infrastructure—work together behind the scenes to make tech actually run.",
   },
-];
-
-const skills = [
-  "React",
-  "TypeScript",
-  "Tailwind",
-  "Node.js",
-  "Django",
-  "Python",
-  "C",
-  "TensorFlow",
-  "SQL",
-  "Git",
 ];
 
 export const About = () => {
@@ -41,7 +28,7 @@ export const About = () => {
             Building thoughtful digital products with equal parts curiosity and rigor.
           </h2>
           <p className="mt-6 text-lg text-slate-300">
-            Hi, I'm Aarjav Mitkari — a Software Engineering student at Carleton University. I love
+            Hi, I'm Aarjav Mitkari, a Software Engineering student @ Carleton University. I love
             architecting web applications that combine delightful UI with dependable infrastructure.
             Whether it's designing an intuitive dashboard or training ML models, I enjoy exploring the
             intersection of design systems and intelligent software.
@@ -56,18 +43,6 @@ export const About = () => {
               <p className="text-sm leading-relaxed">{item.detail}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12">
-          <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Toolbox</p>
-          <div className="mt-4 flex flex-wrap gap-6 text-sm font-semibold tracking-[0.2em] text-slate-200">
-            {skills.map((skill) => (
-              <span key={skill} className="relative inline-flex items-center gap-2">
-                <span className="h-px w-6 bg-white/40"></span>
-                {skill}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ export const Footer = () => {
         </div>
       </div>
       <p className="mt-8 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Aarjav Mitkari. Built with React & Tailwind CSS.
+        © {new Date().getFullYear()} Aarjav Mitkari.
       </p>
     </footer>
   );

@@ -3,8 +3,8 @@ import React from "react";
 const highlights = [
   { label: "Major", value: "Software Engineering" },
   { label: "University", value: "Carleton University" },
-  { label: "Focus", value: "Web Dev & AI/ML" },
-  { label: "GPA", value: "3.8/4.0" },
+  { label: "Focus", value: "Infrastructure & AI/ML" },
+  { label: "GPA", value: "3.9/4.0" },
 ];
 
 export const Resume = () => {
@@ -14,11 +14,10 @@ export const Resume = () => {
         <div>
           <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Resume</p>
           <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-            A snapshot of the skills, leadership, and outcomes that I bring to every engagement.
+            A snapshot of the skills and outcomes that I bring to every engagement.
           </h2>
           <p className="mt-4 text-slate-300">
-            Download the full resume for a detailed overview of my coursework, research, leadership
-            experience, and technical expertise. Here's a quick preview of what you'll find inside.
+            Here's a quick preview.
           </p>
           <dl className="mt-8 grid gap-6 sm:grid-cols-2">
             {highlights.map((item) => (
@@ -37,7 +36,7 @@ export const Resume = () => {
               Download PDF ↗
             </a>
             <a
-              href="/Aarjav_Mitkari_Resume_5.pdf"
+              href="/Aarjav_Mitkari_Resume_8.pdf"
               target="_blank"
               className="inline-flex items-center gap-2 text-slate-300 hover:text-white"
             >

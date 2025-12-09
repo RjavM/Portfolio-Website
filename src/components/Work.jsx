@@ -2,30 +2,30 @@ import React from "react";
 
 const experiences = [
   {
+    title: "Software Developer Intern",
+    org: "Ribbon Communications",
+    period: "Jan 2025 - Dec 2025",
+    summary: 
+      "Backend engineer on a cloud platform team for Ribbon’s RAMP microservices platform.",
+    bullets: [
+      "🧩 Worked across multiple microservices, developing features that improved reliability and clarity in the platform.",
+      "⚙️ Provisioned using Ansible and automated OpenShift deployments, reducing setup effort across teams.",
+      "🔒 Supported security improvements by identifying vulnerabilities and contributing fixes to strengthen the platform.",
+    ]
+  },
+  {
     title: "AI/ML Research Assistant",
     org: "Carleton University",
     period: "2024 — Present",
     summary:
-      "Designing computer vision experiments to track objects using modern deep learning pipelines.",
+      "Undergraduate research assistant focused on improving GAN/CNN experiments to support academic model benchmarking and analysis.",
     bullets: [
-      "Prototype GAN-driven augmentation workflows that boost tracking accuracy on noisy datasets.",
-      "Collaborate with professors to benchmark CNN architectures and distill insights into research papers.",
-      "Translate findings into demos that prove real-world value for labs and partner organizations.",
+      "🔬 Replicated GAN-based experiments to understand model behaviour and validate prior results.",
+      "🧪 Tweaked GAN and CNN configurations to explore improvements in accuracy and performance on research datasets.",
+      "📝 Worked with professors to benchmark CNN models and summarize findings for internal research discussions and paper drafts.",
     ],
     tags: ["Python", "TensorFlow", "OpenCV", "PyTorch"],
-  },
-  {
-    title: "Full-stack Freelance Projects",
-    org: "Independent",
-    period: "2022 — 2024",
-    summary: "Launch digital experiences for student clubs and small businesses with bold UX.",
-    bullets: [
-      "Built a digital wallet platform with secure authentication, instant transfers, and search.",
-      "Created a Django-powered food menu manager with custom dashboards and admin tooling.",
-      "Automated deployments and instrumentation so clients could monitor growth with ease.",
-    ],
-    tags: ["React", "Django", "Tailwind", "PostgreSQL"],
-  },
+  }
 ];
 
 export const Work = () => {
