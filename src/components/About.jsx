@@ -14,7 +14,7 @@ const highlights = [
   {
     title: "Infrastructure/System Arch freak",
     detail:
-      "Curious about how all the pipes—models, services, and infrastructure—work together behind the scenes to make tech actually run.",
+      "Curious about how all the pipes—models, services, and infrastructure work together behind the scenes to make tech actually run.",
   },
 ];
 

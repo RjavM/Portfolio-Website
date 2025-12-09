@@ -47,7 +47,7 @@ export const Resume = () => {
 
         <div className="border border-white/15 rounded-2xl overflow-hidden">
           <iframe
-            src="/Aarjav_Mitkari_Resume_5.pdf"
+            src="/Aarjav_Mitkari_Resume_8.pdf"
             title="Aarjav Mitkari Resume"
             className="h-[500px] w-full"
           ></iframe>
