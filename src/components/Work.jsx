@@ -17,7 +17,7 @@ const experiences = [
   {
     title: "AI/ML Research Assistant",
     org: "Carleton University",
-    period: "2024 — Present",
+    period: "May 2024 — Dec 2024",
     summary:
       "Undergraduate research assistant focused on improving GAN/CNN experiments to support academic model benchmarking and analysis.",
     bullets: [
