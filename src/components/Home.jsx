@@ -1,38 +1,85 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import { Projects } from "./Projects";
-import { Navbar } from "./Navbar";
-import { About } from "./About";
-import { Resume } from "./Resume";
-import { Image } from "./Image";
-import { Footer } from "./Footer";
+import React from "react";
+
+const stats = [
+  { label: "Engineering projects", value: "08+" },
+  { label: "Hackathons & clubs", value: "05" },
+  { label: "Tech stack mastery", value: "12 tools" },
+  { label: "Coffee cups", value: "∞" },
+];
 
 export const Home = () => {
-  const nav = useNavigate();
-
-  return <div className="bg-gray-900 text-white min-h-screen flex flex-col">
-    <Navbar />
-    <div className="flex-grow py-12 flex flex-col justify-center items-center"><h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
-      <p className="text-2xl mt-4">
-        <div className="flex flex-row justify-center italic">
-          Where Creativity Meets Code <br />
+  return (
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.20),_transparent_55%)]"
+    >
+      <div className="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl"></div>
+      <div className="pointer-events-none absolute -right-10 top-1/3 h-40 w-40 rounded-full bg-blue-600/30 blur-3xl"></div>
+      <div className="max-w-6xl mx-auto px-4 py-20 lg:py-28 grid gap-12 lg:grid-cols-2 items-center">
+        <div className="space-y-8">
+          <p className="text-sm uppercase tracking-[0.4em] text-cyan-300">
+            Software Engineer & Designer
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
+            Crafting immersive digital experiences that blend{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              creativity
+            </span>{" "}
+            with precision engineering.
+          </h1>
+          <p className="text-lg text-slate-300 max-w-xl">
+            I'm Aarjav Mitkari, a Carleton University software engineering student focused on full-stack
+            web applications and AI/ML solutions. I help teams move from idea to polished product with a
+            sharp eye for UX and scalable architecture.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 font-semibold shadow-lg shadow-indigo-500/30"
+            >
+              View featured projects
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-full border border-white/20 text-slate-200 hover:border-white/60 transition"
+            >
+              Let's build together
+            </a>
+          </div>
+          <dl className="grid gap-6 sm:grid-cols-2">
+            {stats.map((stat) => (
+              <div key={stat.label} className="border-l border-white/30 pl-5">
+                <dt className="text-xs uppercase tracking-[0.35em] text-slate-400">
+                  {stat.label}
+                </dt>
+                <dd className="text-3xl font-semibold mt-1 text-white">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
-        Explore the journey of a passionate Web Developer & Designer dedicated to crafting innovative digital solutions.</p>
-      <Image />
-      <div className="flex flex-row space-x-40">
-        <button onClick={() => {
-          nav("/Work");
-        }} className="mt-8 bg-blue-500 text-white py-2 px-4 rounded-lg">View My Work Experience</button>
-        <button onClick={() => {
-          nav("/Projects");
-        }} className="mt-8 bg-blue-500 text-white py-2 px-4 rounded-lg">View My Projects</button>
-        <button onClick={() => {
-          nav("/Resume");
-        }} className="mt-8 bg-blue-500 text-white py-2 px-4 rounded-lg">View My Resume</button>
+        <div className="relative">
+          <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-blue-500/30 to-transparent blur-3xl"></div>
+          <div className="relative rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl">
+            <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 to-slate-800">
+              <img
+                src="/Student.jpg"
+                alt="Aarjav Mitkari"
+                className="h-full w-full object-cover mix-blend-luminosity"
+              />
+            </div>
+            <div className="mt-6 space-y-3 text-sm">
+              <div className="flex justify-between text-slate-300">
+                <span>Current Focus</span>
+                <span className="text-white font-semibold">AI-driven UX</span>
+              </div>
+              <div className="flex justify-between text-slate-300">
+                <span>Location</span>
+                <span className="text-white font-semibold">Ottawa, Canada</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    {/* <About /> */}
-    <Footer />
-  </div>
-
-} 
+    </section>
+  );
+};

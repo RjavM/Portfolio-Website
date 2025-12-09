@@ -1,33 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { About } from './components/About'
-import { Projects } from './components/Projects'
-import { Contact } from './components/Contact'
-import { Home } from './components/Home'
-import { Navbar } from './components/Navbar'
-import { Work } from './components/Work'
-import { Resume } from './components/Resume'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-
-
+import './App.css';
+import { Navbar } from './components/Navbar';
+import { Home } from './components/Home';
+import { About } from './components/About';
+import { Work } from './components/Work';
+import { Projects } from './components/Projects';
+import { Resume } from './components/Resume';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
 function App() {
-  return <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Projects" element={<Projects />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path='/Work' element={<Work />} />
-      <Route path='/Resume' element={<Resume />} />
-    </Routes>
-  </BrowserRouter>
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-blue-500/30">
+      <Navbar />
+      <main className="space-y-24 pb-24">
+        <Home />
+        <About />
+        <Work />
+        <Projects />
+        <Resume />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

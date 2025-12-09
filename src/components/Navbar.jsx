@@ -1,29 +1,77 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import { Hamburger } from "./Hamburger";
+import React, { useState } from "react";
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Resume", href: "#resume" },
+  { label: "Contact", href: "#contact" },
+];
 
 export const Navbar = () => {
-    return <nav className="bg-gray-800 text-white p-4">
-        <div className="container mx-auto flex justify-between items-center">
-            <div className="text-2xl font-bold">
-                <Link to="/">AARJAV</Link>
-            </div>
-            <div className="hidden xl:flex">
-                <Link to="https://github.com/RjavM" target="_blank" className="mx-2 hover:text-blue-400">
-                    GITHUB
-                </Link>
-                <Link to="https://www.linkedin.com/in/aarjav-mitkari/" target="_blank" className="mx-2 hover:text-blue-400">
-                    LINKED-IN
-                </Link>
-                <Link to="/Contact" className="mx-2 hover:text-blue-400">
-                    CONTACT-ME
-                </Link>
-                <a href="/Aarjav_Mitkari_Resume_5.pdf" download className="mx-2 hover:text-blue-400">DOWNLOAD-RESUME</a>
-            </div>
-            <div className="xl:hidden">
-                <Hamburger />
-            </div>
-        </div>
-    </nav>
+  const [open, setOpen] = useState(false);
 
-}
+  return (
+    <header className="sticky top-0 z-30 backdrop-blur-xl border-b border-white/10 bg-slate-950/80">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+        <a href="#home" className="text-xl font-semibold tracking-[0.3em]">
+          AARJAV
+        </a>
+        <nav className="hidden lg:flex items-center space-x-8 text-sm">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="tracking-wide text-slate-200 hover:text-white transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="hidden lg:block">
+          <a
+            href="/Aarjav_Mitkari_Resume_5.pdf"
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-sm font-semibold shadow-lg shadow-blue-500/30"
+            download
+          >
+            Download Resume
+          </a>
+        </div>
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+        >
+          <div className="space-y-1">
+            <span className="block h-0.5 w-6 bg-white"></span>
+            <span className="block h-0.5 w-6 bg-white"></span>
+            <span className="block h-0.5 w-6 bg-white"></span>
+          </div>
+        </button>
+      </div>
+      {open && (
+        <div className="lg:hidden border-t border-white/10 bg-slate-900 px-4 pb-6">
+          <nav className="flex flex-col space-y-4 pt-4 text-sm">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="tracking-wide text-slate-200 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="/Aarjav_Mitkari_Resume_5.pdf"
+              download
+              className="mt-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-4 py-2 text-center font-semibold"
+            >
+              Download Resume
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};

@@ -1,50 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/RjavM" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/aarjav-mitkari/" },
+  { label: "Email", href: "mailto:aarjavmitkari@cmail.carleton.ca" },
+];
 
 export const Footer = () => {
-    return <div className="bg-gray-800 text-white py-10">
-        <div className="container mx-auto px-4 md:flex md:justify-between">
-
-            <div className="mb-8 md:mb-0">
-                <h3 className="text-4xl font-semibold mb-4">About</h3>
-                <p className='text-lg'>
-                    I'm Aarjav Mitkari, a Software Engineering student at Carleton University with a focus on web development <br />and AI/ML. I've worked on projects like digital wallets and stock prediction models, and I'm passionate about<br /> creating innovative solutions. Explore my portfolio and feel free to reach out!
-                </p>
-            </div>
-
-
-            <div className="mb-8 md:mb-0">
-                <h3 className="text-xl font-semibold mb-4">Links</h3>
-                <ul>
-                    <li className="mb-2">
-                        <a href="https://github.com/RjavM" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">GitHub</a>
-                    </li>
-                    <li className="mb-2">
-                        <a href="https://www.linkedin.com/in/aarjav-mitkari/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Linked-In</a>
-                    </li>
-                    <li className="mb-2">
-                        <a href="/#Home" className="text-blue-400 hover:underline">Home</a>
-                    </li>
-                    <li className="mb-2">
-                        <Link to="/Projects" className="text-blue-400 hover:underline">Projects</Link>
-                    </li>
-                    <li className="mb-2">
-                        <Link to="/Contact" className="text-blue-400 hover:underline">Send me a message</Link>
-                    </li>
-                </ul>
-            </div>
-
-            {/* Contact Section */}
-            <div>
-                <h3 className="text-xl font-semibold mb-4">Contact</h3>
-                <ul>
-                    <li className="mb-2">School: aarjavmitkari@cmail.carleton.ca</li>
-                    <li className="mb-2">Personal: ahmit0419@gmail.com</li>
-                    <li className="mb-2">Ottawa, Canada</li>
-                    <li className="mb-2">+1 (343)-542-0904</li>
-                </ul>
-            </div>
+  return (
+    <footer className="border-t border-white/10 bg-slate-950 px-4 py-12">
+      <div className="max-w-6xl mx-auto flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.4em] text-slate-500">Aarjav Mitkari</p>
+          <p className="mt-3 text-slate-300">
+            Designing and engineering digital experiences from Ottawa, Canada.
+          </p>
         </div>
-    </div>
+        <div className="flex flex-wrap gap-4 text-sm text-slate-300">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/10 px-4 py-2 hover:border-white/40 hover:text-white"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <p className="mt-8 text-center text-xs text-slate-500">
+        © {new Date().getFullYear()} Aarjav Mitkari. Built with React & Tailwind CSS.
+      </p>
+    </footer>
+  );
 };
-

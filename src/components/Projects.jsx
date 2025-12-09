@@ -1,65 +1,143 @@
-import React from "react"
-import { Navbar } from "./Navbar"
-import { Footer } from "./Footer"
+import React, { useState } from "react";
 
-const projects = [{
-    title: "Digital Wallet Web Application",
-    description: ["-> Developed a full-stack digital wallet web application featuring user authentication with Zod and JSON Web Token (JWT) and real-time transaction processing.",
-        "-> Implemented a user dashboard enabling search and transaction functionalities, allowing users to transfer money between accounts with real-time balance updates",
-        "-> Implemented robust backend logic to ensure secure and accurate financial transactions between user accounts."
+const projects = [
+  {
+    title: "Digital Wallet",
+    description:
+      "A secure web wallet with instant transfers, live balances, and JWT-authenticated sessions.",
+    bullets: [
+      "Crafted a minimalist dashboard with search, transfer modals, and activity feed.",
+      "Built a Node/Express backend that validates transactions and emits live updates.",
+      "Hardened auth flows with Zod validation and refresh token rotation.",
     ],
-    link: "https://github.com/RjavM/Payment-App"
-},
-{
-    title: "Stock Prediction Using Machine Learning",
-    description: ["-> Built a predictive model using historical S&P 500 data from Yahoo Finance, leveraging both Random Forest and XGBoost classifiers to forecast stock movements.",
-         "-> Engineered advanced features such as rolling averages and trend indicators to enhance model accuracy and performance.",
-         "-> Executed comprehensive backtesting, evaluating model precision and adjusting hyperparameters to optimize prediction results over various time horizons."],
-    link: "https://github.com/RjavM/Stock-Prediction"
-},
-{
-    title: "Food Menu Web-App",
-    description: ["-> Developed a seamless food menu web app using Python and Django, which enabled efficient handling of various functionalities in a structured manner by implementing class-based views and defining URL patterns.",
-         "-> Implemented CRUD operations for menu items integrated with user authentication, which ensured secure user access and efficient data management through profile creation by Django signals and streamlined data input processes.",
-         "-> Designed and managed the database schema using Django models, which ensured data integrity and relationship mapping for robust information storage through the use of migrations.",
-        "-> Crafted user-friendly, consistent and engaging templates with dynamic content, which optimized site design and interactivity by integrating static files"],
-    link: "https://github.com/RjavM/Food-Menu-Web-App"
-},
-{
-    title: "Text Based Social Platform",
-    description: ["-> Designed a command-line application in C to enhance the efficiency of user registration and management which optimized the storage and retrieval of user data by implementing ordered linked lists.", 
-        "-> Implemented secure profile authentication and a dynamic system for user profiles and posts which contributed to improving user experience by employing dynamic data structures.",
-        "-> Prevented duplicate friend entries and established connections between friend data which prevented redundant friend entries and facilitated meaningful connections through a user search feature and linking users to their friends’ posts.",
-        "-> Demonstrated attention to detail which ensured consistent data handling by implementing a username conversion process."],
-    link: ""
-}
-]
+    stack: ["React", "Node.js", "Tailwind", "MongoDB"],
+    link: "https://github.com/RjavM/Payment-App",
+    live: "https://payment-app-psi.vercel.app",
+  },
+  {
+    title: "Market Pulse",
+    description:
+      "ML-powered stock prediction on S&P 500 data leveraging Random Forest and XGBoost ensembles.",
+    bullets: [
+      "Engineered 15+ custom features including rolling indicators and macro trends.",
+      "Built a backtesting harness that surfaces precision and recall over time horizons.",
+      "Packaged training notebooks so analysts can tweak parameters with ease.",
+    ],
+    stack: ["Python", "Pandas", "XGBoost", "Scikit-learn"],
+    link: "https://github.com/RjavM/Stock-Prediction",
+  },
+  {
+    title: "Menu Studio",
+    description:
+      "A restaurant CMS built with Django that lets owners launch dynamic menus and manage orders.",
+    bullets: [
+      "Implemented class-based views and signals for seamless CRUD + profile management.",
+      "Designed a responsive design system with reusable components and theming.",
+      "Optimized database models and migrations for reliable data relationships.",
+    ],
+    stack: ["Django", "PostgreSQL", "Bootstrap", "Docker"],
+    link: "https://github.com/RjavM/Food-Menu-Web-App",
+  },
+  {
+    title: "Text Social",
+    description:
+      "A C-based social platform for the terminal, featuring friend graphs and secure posts.",
+    bullets: [
+      "Used ordered linked lists and custom parsers for deterministic performance.",
+      "Shipped friend search + feed linking to encourage meaningful connections.",
+      "Implemented username normalization and validation to prevent duplicates.",
+    ],
+    stack: ["C", "Data Structures"],
+    link: "",
+  },
+];
 
 export const Projects = () => {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow bg-gray-900 text-black py-20 px-10">
-                <h2 className="text-white text-3xl font-bold">Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                    {projects.map((project, index) => (
-                        <div key={index} className="bg-gray-300 p-5 rounded-lg shadow-lg">
-                            <h3 className="text-xl font-bold">{project.title}</h3>
-                            <div className="mt-2">
-                                {project.description.map((line, i) => (
-                                    <p key={i} className="mt-1">{line}</p>
-                                ))}
-                            </div>
-                            {project.link && (
-                                <a href={project.link} className="text-blue-500 mt-4 inline-block hover:font-bold underline">
-                                    View Project
-                                </a>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </main>
-            <Footer />
+  const [activeProject, setActiveProject] = useState(null);
+
+  const toggleProject = (title) => {
+    setActiveProject((prev) => (prev === title ? null : title));
+  };
+
+  return (
+    <section id="projects" className="px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.4em] text-slate-400">Projects</p>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Spotlighted builds that blend thoughtful UX, resilient systems, and measurable impact.
+          </h2>
         </div>
-    );
+
+        <div className="mt-12 space-y-4">
+          {projects.map((project) => {
+            const isActive = activeProject === project.title;
+            return (
+              <article
+                key={project.title}
+                className={`border border-white/15 px-5 transition-all duration-300 origin-left ${
+                  isActive ? "py-8 scale-[1.01] bg-white/5" : "py-4 hover:scale-[1.005]"
+                }`}
+                onMouseEnter={() => setActiveProject(project.title)}
+                onFocus={() => setActiveProject(project.title)}
+                onMouseLeave={() => setActiveProject(null)}
+              >
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <button
+                    type="button"
+                    className="text-left"
+                    onClick={() => toggleProject(project.title)}
+                    aria-expanded={isActive}
+                  >
+                    <p className="text-xs uppercase tracking-[0.35em] text-slate-500">Project</p>
+                    <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+                    <p className="text-sm text-slate-400">{project.stack.join(" · ")}</p>
+                  </button>
+                  <div className="flex flex-wrap gap-3 text-xs font-semibold tracking-[0.2em] text-slate-400">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-300 hover:text-blue-100"
+                      >
+                        Visit App ↗
+                      </a>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-cyan-300 hover:text-cyan-100"
+                      >
+                        GitHub ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div
+                  className={`grid transition-all duration-300 ${
+                    isActive ? "grid-rows-[1fr] opacity-100 pt-6" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="text-slate-200">{project.description}</p>
+                    <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                      {project.bullets.map((line) => (
+                        <li key={line} className="flex gap-2">
+                          <span className="text-cyan-300">—</span>
+                          <p>{line}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
